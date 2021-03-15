@@ -13,5 +13,17 @@ Turbolinks.start();
 ActiveStorage.start();
 
 window.highlightTag = function(tagName) {
-  alert(tagName);
+  const sourceCodeDiv = document.getElementById("sourceCode");
+  let sourceCode = sourceCodeDiv.textContent;
+  sourceCodeDiv.textContent = sourceCode.replace(
+    new RegExp(`<${tagName}`, "gi"),
+    match => `<mark>${match}</mark>`
+  );
 };
+
+// document.addEventListener("turbolinks:load", () => {
+//   const clickButton = document.getElementById("ttt");
+
+//   clickButton.addEventListener("click", test123);
+// });
+// alert("hi");

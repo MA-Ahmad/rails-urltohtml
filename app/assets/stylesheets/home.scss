@@ -1,3 +1,15 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+mark {
+    color: black; 
+    padding: 5px; 
+    background: greenyellow; 
+}
+
+a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(192, 113, 38);
+}

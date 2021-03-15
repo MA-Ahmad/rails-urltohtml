@@ -11,9 +11,11 @@
 <h1>Summary</h1>
 <% @summary&.each do |tag, count| %>
     <div>
-        <span onclick="highlightTag('<%= tag %>')"><%= tag %></span>: <%= count %>
+        <a onclick="highlightTag('<%= tag %>')"><%= tag %></a>: <%= count %>
     </div>
 <% end %>
 <%#= @summary %>
 <h1>Source code</h1>
+<div id="sourceCode">
 <%= @doc&.to_html %>
+</div>
