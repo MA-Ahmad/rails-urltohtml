@@ -1,2 +1,19 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if @error.present? %>
+    <p>Please enter a valid url</p>
+<% end %>
+
+<%= form_for :page, url: root_path, method: 'get' do |form| %>
+  <%= form.text_field :url, required: true %>
+  <%= form.submit 'fetch html' %>
+<% end  %>
+<p>
+</p>
+<h1>Summary</h1>
+<% @summary&.each do |tag, count| %>
+    <div>
+        <span onclick="highlightTag('<%= tag %>')"><%= tag %></span>: <%= count %>
+    </div>
+<% end %>
+<%#= @summary %>
+<h1>Source code</h1>
+<%= @doc&.to_html %>
