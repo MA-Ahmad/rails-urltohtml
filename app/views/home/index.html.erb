@@ -3,7 +3,7 @@
 <% end %>
 
 <%= form_for :page, url: root_path, method: 'get' do |form| %>
-  <%= form.text_field :url, required: true %>
+  <%= form.text_field :url, placeholder: 'Type any page url', required: true %>
   <%= form.submit 'fetch html' %>
 <% end  %>
 
