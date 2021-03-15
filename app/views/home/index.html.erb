@@ -6,16 +6,15 @@
   <%= form.text_field :url, required: true %>
   <%= form.submit 'fetch html' %>
 <% end  %>
-<p>
-</p>
+
 <h1>Summary</h1>
 <% @summary&.each do |tag, count| %>
     <div>
         <a onclick="highlightTag('<%= tag %>')"><%= tag %></a>: <%= count %>
     </div>
 <% end %>
-<%#= @summary %>
+
 <h1>Source code</h1>
 <div id="sourceCode">
-<%= @doc&.to_html %>
+    <%= @doc&.to_html %>
 </div>
