@@ -7,14 +7,18 @@
   <%= form.submit 'fetch html' %>
 <% end  %>
 
-<h1>Summary</h1>
-<% @summary&.each do |tag, count| %>
-    <div>
-        <a onclick="highlightTag('<%= tag %>')"><%= tag %></a>: <%= count %>
-    </div>
+<% if @summary.present? %>
+    <h1>Summary</h1>
+    <% @summary&.each do |tag, count| %>
+        <div>
+            <a onclick="highlightTag('<%= tag %>')"><%= tag %></a>: <%= count %>
+        </div>
+    <% end %>
 <% end %>
 
-<h1>Source code</h1>
-<div id="sourceCode">
-    <%= @doc&.to_html %>
-</div>
+<% if @doc.present? %>
+    <h1>Source code</h1>
+    <div id="sourceCode">
+        <%= @doc&.to_html %>
+    </div>
+<% end %>
